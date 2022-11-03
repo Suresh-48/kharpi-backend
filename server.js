@@ -7,13 +7,13 @@ config({
   path: "./.env",
 });
 
-import https from "https";
+import http from "http";
 import * as SocketIO from "socket.io";
 import app from "./app.js";
 import { getPublicImagUrl, uploadBase64File } from "./utils/s3.js";
 import Chat from "./models/chatModel.js";
 
-const server = new https.createServer(app);
+const server = new http.createServer(app);
 
 const inputOutput = new SocketIO.Server(server);
 
